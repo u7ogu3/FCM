@@ -1,0 +1,183 @@
+<html><head><title>ACM Help</title>
+		<style type="text/css">
+/*			body, td {
+				font-family: Verdana;
+				font-size: 10pt;
+			}
+			h1 {
+				font-size: 12pt;
+			}*/
+			.command {
+				font-family: Courier New;
+				font-size: 12pt;
+				width: 25%;
+			}
+			.command-text {
+				font-family: Courier New;
+				font-size: 12pt;
+			}
+			.definition {
+				width: 75%;
+			}
+body, td {padding: 20px;background-color: #FFFFFF;
+	font: 100% Verdana,Arial,sans-serif;
+}
+td {padding: 5px;}
+tr {width: 100%;}
+h1,h2,p{margin: 0 10px}
+	h1{
+		color: #FFFFFF;
+		font: 150% "Trebuchet MS",Verdana,Arial,sans-serif;
+	}
+h2{font-size: 200%;color: #f0f0f0}
+p{padding-bottom:1em}
+h2{padding-top: 0.3em}
+div#nifty{ padding: 5px; margin: 0 10% ;background: #9BD1FA; width:100%}
+
+b.rtop, b.rbottom{display:block;background: #FFFFFF}
+b.rtop b, b.rbottom b{display:block;height: 1px;
+    overflow: hidden; background: #9BD1FA}
+b.r1{margin: 0 5px}
+b.r2{margin: 0 3px}
+b.r3{margin: 0 2px}
+b.rtop b.r4, b.rbottom b.r4{margin: 0 1px;height: 2px}
+
+		</style>
+	</head>
+	<body><div id="nifty">
+<b class="rtop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+		<h1>Intro</h1>	
+		<p>
+		The <b>Advanced Clipboard Manager</b> is a Windows-based clipboard management utility. ACM comes with a slim and sleek graphical interface, which can be conveniently placed anywhere on the desktop. It manages all of your recently used copied content and places them in an easy-to-use toolbar. Retrieving stored content is as simple as moving your mouse cursor over the numbered toolbar buttons (called 'slots', to preview) and clicking (to select/paste). For advance use, ACM offers the textbox, which allows users to execute advanced commands such as search, join, delete and file I/O. ACM also allows execution of chain commands, which allow you to execute multiple commands in series: for instance, the command "sj" shows the content of all the slots and then joins them together, ready to paste.</p><br />
+		<h1>Keyboard Shortcuts</h1>
+		<ul>
+			<li>Press <b>Ctrl <font color=white>+</font> Windows <font color=white>+</font> <i>&lt;slot no.&gt;</i></b> to select and paste a slot<br />
+			(e.g. <b>Ctrl <font color=white>+</font> Windows <font color=white>+</font> 1</b> will paste the contents of slot 1 into the current application.)</li>
+			<li>Press <b>Ctrl <font color=white>+</font> Windows <font color=white>+</font> <font size=+1>=</font> (equals/plus)</b> to loop and paste the <b>NEXT</b> slot starting from the current slot</li>
+			<li>Press <b>Ctrl <font color=white>+</font> Windows <font color=white>+</font> <font size=+1>-</font> (hyphen/underscore)</b> to loop and paste the <b>PREVIOUS</b> slot starting from the current slot</li>
+			<li>Press <b>Ctrl <font color=white>+</font> Windows <font color=white>+</font> <font size=+1>`</font> (backquote/tilde)</b> to loop and <b>PREVIEW</b> the next slot starting from the current slot<p>
+			<b>Tip!</b> You can preview and paste the current slot by pressing the preview shortcut followed by either the plus/minus pasting shortcuts.</li>
+		</ul>
+		<p><b>Note</b>: Keyboard shortcuts will still be applied if the current application has the same shortcut.<br>
+		Uncheck 'Use Shortcuts' in the ACM menu to disable pasting of slot contents into the current application. When disabled, slot contents will still be moved into the clipboard - use shortcut and press <b>Ctrl <font color=white>+</font> v</b> to paste.</p>
+		<br />
+		<h1>Using the Graphical User Interface</h1>
+		<ul>
+			<li><b>Left Click</b> to choose a slot</li>
+			<li><b>Right Click</b> to delete a slot, <b>Right Click</b> again to restore a deleted slot</li>
+			<li>Move toolbar by <b>holding</b> mouse button over one of the slots</li>
+			<li>Open the output window by either <b>pulling</b> it down from under the toolbar, or by <b>clicking</b> "Open Output" from the ACM image menu</li>
+			<li><b>Ctrl+Left Click</b> to paste a slot's contents without copying it to the clipboard</li>
+			<li><b>Alt+Left Click</b> To search the current contents (or first line of text) of a slot on Google.</li>
+			<li><b>Shift+Left Click</b> to 'lock' a slot from being automatically overwritten; <b>Shift+Left Click</b> again to unlock this slot. <b><u>Note</u></b>: Slots can still be deleted while locked</li>
+			<li><b>Networking Support</b> - Enable Network from ACM menu to start ACM server at selected port. Please make sure the port is forwarded if you are behind a router. 
+			You can connect to another Networking enabled ACM via password:ip:port or ip:port where password is a security check for the server, ip is server's ip and the port the server is running on. 
+			ACM will then restart and clone server's ACM. This is read-only client side ACM with viewing/saving via menu/copying support only. The startup may take a few seconds as ACM downloads all the data from the server.
+			Note: If password is left blank on the server then a user can connect with just ip:port otherwise the password must be entered to clear the security check.
+			A quick list of all ip addresses entered will remain in network menu. You can manually edit InstallFolder/network.db to add or remove items to this list. To return to local ACM please click DISCONNECT in Network inside ACM menu. </li>
+			<li><b>Click on preview tooltip to edit, right click in edit box to see more help</b></li>
+		</ul><br />
+		<h1>Command List for the Textbox</h1>
+		<table width=100%>
+			<tr><td class="command" valign="top">s</td><td class="definition">View content of all the slots</td></tr>
+			<!-- define looping: <tr><td class="command" valign="top">l</td><td class="definition">Start looping, will start overwriting slots, once no more slots are available</td></tr> -->
+			<tr><td class="command" valign="top">d<i>&lt;slots&gt;</i></td><td class="definition">Delete the entered slots. EG: "d 1,3-5,9" will delete the slots 1, 3, 4, 5 and 9.</td></tr>
+			<tr><td class="command" valign="top">D<i>&lt;slots&gt;</i></td><td class="definition">Delete all but the entered slots. EG: "D 1,3-5,9" will delete the slots 0, 2, 6, 7 and 8.</td></tr>
+			<tr><td class="command" valign="top">j</td><td class="definition">Join all slots (Ctrl+v to paste)</td></tr>
+			<tr><td class="command" valign="top">n</td><td class="definition">Join all slots together, separated with newline (Ctrl+v to paste)</td></tr>
+			<tr><td class="command" valign="top"><i>&lt;space&gt;</i></td><td class="definition">Join all slots together, separated with space (Ctrl+v to paste)</td></tr>
+			<tr><td class="command" valign="top">a<i>&lt;keyword&gt;</i></td><td class="definition">Find-as-you-type search for the keyword in the slots, this is CASE SENSITIVE. EG: "aPlease" searches for the word Please</td></tr>
+			<tr><td class="command" valign="top">z<i>&lt;keyword&gt;</i></td><td class="definition">Find-as-you-type search for the keyword in the slots (NOT CASE SENSITIVE). EG: "zPlease" searches for please</td></tr>
+			<tr><td class="command" valign="top">x<i>&lt;pattern&gt;</i></td><td class="definition">Perform an 'awk-like' expression. 
+					<br /><b>Examples</b>: 
+					<br /><br />If slots 1 contains "111", 2 contains "222" and 3 contains "333",
+					<blockquote class="command-text">x $1", "$2", "$3 &gt; 4c</blockquote> will return the result "111, 222, 333" and copy this string to both slot 4 and the clipboard.
+					<br /><br />If slots 1 contains "111", 2 contains "222" and 3 contains "333",
+					<blockquote class="command-text">x $1", \""$2"\" and "$3 &gt; 5 9</blockquote> will return the result "111, "222" and 333" and copy this string to slots 5 and 9.</td></tr>
+			<tr><td class="command" valign="top">/</td><td class="definition">Shows clipboard items that were recently overwritten or deleted</td></tr>
+			<tr><td class="command" valign="top">m<i>&lt;item#&gt;</i></td><td class="definition">Copy one of the previously copied items into one of the slots, where item# is the item number from the '/' list</td></tr>
+			<tr><td class="command" valign="top"><i>&lt;slot#&gt;</i></td><td class="definition">Show and select content of slot number. EG: "5" shows content of slot# 5</td></tr>
+			<tr><td class="command" valign="top"><i>.&lt;MacroName args...&gt;</i></td><td class="definition">Run a Groovy macro script.
+					<br /><br /><b>Example</b>:
+					<br /><br />Type ".csrp [search string] [replace string]" in textbox and hit enter to run the Groovy Macro provided with ACM. 
+					This will run the <b>C</b>opy <b>S</b>earch <b>R</b>eplace <b>P</b>aste (csrp.groovy) script located in com/acm/main/res/macros/csrp.groovy. 
+					After running the macro the next copied item will automatically be pasted over by replaced text.
+					For example copying "I am eating" after running ".csrp am was" will result in "I was eating" (recursive replacement).
+					The script's paste functionality executes Ctrl+V so selected text will automatically get replaced. 
+					<br /><br />See below the csrp script to see how to write your own scripts.
+					<br />					
+					<br /><blockquote class="command-text">
+							<br />import com.acm.main.ACM
+							<br />import com.acm.clip.Clip
+							<br />
+							<br />//Make sure search and replace strings are in the script
+							<br />if (args.length == 2) {
+							<br />
+							<br />&nbsp;	//Wait for a new item to be copied
+							<br />&nbsp;	Clip clip = ACM.waitForNextClipItem()
+							<br />&nbsp;	if (clip.isString){
+							<br />&nbsp;&nbsp;		int oldId = clip.id
+							<br />&nbsp;&nbsp;		String s = clip.stringObject
+							<br />&nbsp;&nbsp;		String newString = s.replaceAll(args[0],args[1])
+							<br />&nbsp;&nbsp;		
+							<br />&nbsp;&nbsp;		//Put new string in system clipboard and paste it
+							<br />&nbsp;&nbsp;		ACM.setClipboardText(newString);
+							<br />&nbsp;&nbsp;		clip = ACM.waitForNextClipItem()
+							<br />&nbsp;&nbsp;		ACM.pasteClip(clip.id)
+							<br />&nbsp;&nbsp;		
+							<br />&nbsp;&nbsp;		//Delete old string
+							<br />&nbsp;&nbsp;		ACM.deleteClip(oldId)
+							<br />&nbsp;	}
+							<br />} else {
+							<br />&nbsp;	System.out.println("Usage: .csrp [search] [replace]");	
+							<br />}
+							</blockquote>
+						<br /><br />ACM can run any Groovy script that is saved in the <b>macros/</b> folder in ACM Install folder. 
+						To create your own script simply save it as "scriptName.groovy". To run the script use ".scriptName args..." 
+						You can pass in as many space separated arguments like ".scriptName arg1 arg2" as needed by the script. 
+						<br />Groovy scripts can run proper Java code as can be seen above. It allows you to import any ACM class 
+						and use its functions. This allows you to inject your code into ACM and basically edit it to suit your needs.
+						This can especially help in repetetive tasks. Groovy is a very powerful language that uses Java syntax mixed 
+						with perl/ruby to perform many advanced tasks. To learn more about Groovy please visit <b>http://groovy.codehaus.org/</b>
+						<br /> com.acm.main.ACM is the starting point of ACM and we have provided "public static" methods that you can use
+						in your scripts to perform most of the common tasks. Below is the list of the general methods in com.acm.main.ACM
+						<br /><br />
+						<br />		    Delete a clip saved in a slot
+						<br /><blockquote class="command-text">static void 	deleteClip(int numSlot)</blockquote>
+						<br />          Get the number of clips currently available
+						<br /><blockquote class="command-text">static int 	getACMSize()</blockquote>
+						<br />          Get the Clip object at a particular slot
+						<br /><blockquote class="command-text">static Clip 	getClip(int numSlot)</blockquote>
+						<br />          Paste a clip
+						<br /><blockquote class="command-text">static void 	pasteClip(int numSlot)</blockquote>
+						<br />          Currently only setting text is being opened up via static ACM methods.
+						<br /><blockquote class="command-text">static void 	setClipboardText(java.lang.String string)</blockquote>
+						<br />          This method waits till a new clip item is registered into ACM. And returns that clip.
+						<br /><blockquote class="command-text">static Clip 	waitForNextClipItem()</blockquote>
+					<br />		
+					Some methods return the Clip object which contains the data in a particular slot. All fields in Clip object are public
+					and can be accessed directly (as can be seen in the example). Below are the fields in com.acm.clip.Clip
+					<br /><br /><blockquote class="command-text">
+					<br />int id - Used as numSlot in above methods
+					<br />long crcValue - crc value for the image
+					<br />boolean isEmpty - if this clip is empty
+					<br />boolean isString - if this clip is a string
+					<br />boolean isFile - if this clip is file list
+					<br />boolean isImage - if this clip is an image
+					<br />boolean isLocked - if this clip is locked
+					<br />String stringObject - the string for this clip
+					<br />List<File> fileObject - the file list for this clip
+					<br />Image imageObject - the image for this clip
+					<br />Transferable clip - Object with the DataFlavors
+					</blockquote>
+					<br /><br /> Fields in Clip only get initialized if they need to be. Use the booleans to test what is in the clip 
+					before getting the values. See above example on how to do that.
+					<br />com.acm.main.ACM.acm is the main object handling all ACM activities. By using this object you can access all 
+					other public methods provided in ACM and perform more advance functions in your scripts. Please see ACM's API to learn 
+					about all the methods provided. JavaDoc available at <b>http://acmgr.sourceforge.net/doc/</b>					
+					</td></tr>
+		</table>
+		<p><b>Note</b>: Previously entered commands can be browsed and retrieved using the up and down keys when using the textbox. (Pressing Esc will clear the textbox.)</p>
+<b class="rbottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+	</div>
+</body></html>

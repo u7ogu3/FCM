@@ -1,0 +1,185 @@
+[4.1.1 Beta] Dec 08 2009
+<E> Happy Holidays! Snow Effect. Turn off through Window menu
+<B> Check for Update not working with Automatic Updates off bug fixed
+
+[4.1.0 Beta] Dec 04 2009
+<E> Saving formatted text in temp files, Restoring clips with styles
+<E> Edit Clips by clicking on the preview tooltip (right click on edit box to see help)
+<E> Live rendering of Clips in RTF/HTML format via Edit box
+<E> Edit directly to raw format for RTF/HTML based texts by keyboard shortcut Ctrl + R
+<B> Tooltip locations fixed for both Mouse over and Keyboard shortcut 
+
+[4.0.1 Beta] Dec 01 2009
+<B> Keyboard Hook Library load fix. ACM could not close otherwise.
+
+[4.0.0 Beta] Nov 27 2009
+<E> Groovy Macros Support -- See Help
+<E> Startup Networking support to view clips from another computer
+<E> Copy Search Replace Paste ".csrp [search] [replace]" macro added
+<E> Keyboard shortcuts now include Num Pad keys
+<E> New Menu Style
+<E> Load GroovyConsole
+<E> Polling and Owning support for systen clipboard
+<E> External implementations support. Download ACM source http://acmgr.sourceforge.net/src.rar
+<E> Clipboard API. See JavaDoc http://acmgr.sourceforge.net/doc/
+<B> Properties now saved to file in a separate thread
+<B> Excel copy bug fix via Polling support
+<B> Java version check bug fix
+
+[3.2.0 Beta] May 2 2009
+<E> File items can now be restored at startup and after deletion
+<E> Opacity implemented. JRE 1.6 Update 12 or over is required
+
+[3.1.0 Beta] Apr 29 2009
+<E> Removed constant polling with a semi-clipboard hook functionality
+<E> File icons displayed for selected files instead of just folder icon
+
+[3.0.1 Stable] Sept 08 2007
+<E> ACM now released as Stable
+<E> Change log now includes entire history
+
+[3.0.0 Beta] Apr 26 2007
+<E> Image support
+<E> File support
+<E> New customizable colour schemes!
+<E> Tabbed Java extensions - Check it out in the output window!
+<E> New website! http://acmgr.sourceforge.net
+<E> Notepad extension can be downloaded at our website
+<E> Opens files and directories in default applications when Alt + clicking
+<B> Correctly opens HTTP links when Alt + clicking
+<B> Google searches now go through google.com, instead of google.ca
+<B> Fixed bug with currently selected locked item not showing on startup
+<B> Textbox issues with new and empty lines fixed
+
+[2.9.5 Beta] Apr 11 2007
+<B> Critical bugs with pruning and updating fixed
+
+[2.9.4 Beta] Apr 10 2007
+<B> Clip previews and menu show on right of vertical ACM when appropriate
+
+[2.9.3 Beta] Apr 9 2007
+<E> Vertical support!
+
+[2.9.2 Beta] Apr 3 2007
+<B> Critical Issues fixed regarding output window and database
+
+[2.9.1 Beta] Apr 3 2007
+<E> Added automatic options to purge the database
+<E> Completely delete all data files through 'Delete Everything'
+
+[2.9.0 Beta] Mar 30 2007
+<E> <html>Support for <b>ALL</b> international languages!</html>
+
+[2.8.1 Beta] Mar 22 2007
+<B> No longer loads Windows-specific keyboard shortcuts on non-Windows platforms
+
+[2.8.0 Beta] Mar 13 2007
+<E> Find-as-you-type search implemented (see help)
+
+[2.7.3 Beta] Mar 9 2007
+<B> Tray Icon first click exception bug fixed
+
+[2.7.2 Beta] Mar 9 2007
+<E> Notification of ACM updates
+<E> Preview shortcut added
+<E> Pasting shortcuts start with current slot
+
+[2.7.1 Beta] Mar 7 2007
+<E> Splash screen progress bar
+<B> Fixed crashing on keyboard shortcuts with less than 10 slots
+<B> Always-on-top bug (presumably) fixed this time!
+<B> Several issues with Ctrl + click resolved
+
+[2.7.0 Beta] Mar 6 2007
+<E> Cooler About page - with history! (me!)
+<E> Keyboard shortcuts
+
+[2.6.1 Beta] Feb 7 2007
+<B> "Delete all" problem fixed
+
+[2.6.0 Beta] Jan 3 2007
+<B> "Delete unlocked" problem fixed
+<E> Splash screen
+<E> Alt + left click searches Google with first line of item
+<B> Fixed loading issue with large clip data
+<B> Resolved issue with unsynchronized locked slots on startup
+
+[2.5.5 Beta] Dec 20 2006
+<E> Locked slots saved upon exit
+<E> Automatic updates switch added to the ACM menu
+
+[2.5.4 Beta] Dec 19 2006
+<E> Tooltip color modified
+<B> Fixed issue where entering slot into textbox did not update interface
+
+[2.5.3 Beta] Dec 18 2006
+<E> Textbox command history saved from all previous ACM sessions
+<E> Awk-like functionality using 'x' command
+<E> 'd' with corresponding slot number(s) added (an alternative for q-p)
+<E> "Restore All" (reverts effects of Delete All) introduced
+
+[2.5.2 Beta] Dec 15 2006
+<E> Command history saved during the session (viewable with up and down keys)
+<B> Bug with Help and Feedback windows fixed
+
+[2.5.1 Beta] Dec 14 2006
+<E> New and refreshing help screen!
+
+[2.5.0 Beta] Dec 13 2006
+<E> Shift + left click locks the selected button from being overwritten
+<E> Right-clicking on a deleted item restores the item
+
+[2.4.2 Beta] Dec 12 2006
+<E> Ctrl + left click pastes without copying item to clipboard
+<B> Resolved various issues with updating ACM
+
+[2.4.1 Beta] Dec 11 2006
+<E> Customizeable number of slots!
+<E> Saved clip items are now restored on startup
+<B> Several bugs with '/' and 'm' fixed
+
+[2.4.0 Beta] Nov 28 2006
+<E> Looping property controllable with new toggle
+
+[2.3.1 Beta] Nov 27 2006
+<E> Formatted copying supported
+<E> Styled pasting toggle added
+
+[2.2.0 Beta] Nov 23 2006
+<E> Lock-in-place option
+<E> Added toggle to enable or disable clipboard monitoring
+<E> Clicking on a slot changes its appearance
+
+[2.1.4 Beta] Nov 22 2006
+<E> Paste on click!
+<E> Always on top option added to ACM menu
+<E> Left-clicking once on tray icon brings ACM to the front
+<B> Fixed problem with menu button not disappearing on double-click
+
+[2.1.3 Beta] Nov 12 2006
+<E> Automatic updates reimplemented to use checksums
+
+[2.1.2 Beta] Nov 9 2006
+<E> Added optional Subject and Email fields to the feedback window
+
+[2.1.1 Beta] Nov 7 2006
+<E> Double-clicking on output window opens it up all the way
+<E> Double-clicking on tray icon will hide ACM if already open
+<E> Manual bug reporting now supported through feedback window
+
+[2.0.0 RC 3] Nov 6 2006
+<E> "Delete all" added to ACM menu
+<B> Hovering over large tooltips filled entire screen
+<B> No longer appending new lines when retrieving items from ACM history
+<B> Weird effects when minimizing from taskbar icon resolved
+<B> Resolved issues with right-clicking on tray icon
+<B> Fixed graphical bug which resizes ACM panel when deleting the only item
+
+[2.0.0 RC 1] Nov 5 2006
+<E> Menu items now selectable while click-dragging
+<E> A maximum of one instance of ACM can be run at any given time
+<E> Double-clicking tray icon makes ACM visible
+<E> Right-clicking tray icon opens a menu
+<E> Optional email field added to the feedback window
+<E> Automatic updates!
+<B> Menu turning invisible when clicked outside of ACM fixed
