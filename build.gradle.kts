@@ -14,7 +14,7 @@ tasks.withType<JavaCompile> {
 
 application {
     // ACM.java ist die Main-Klasse im Repo-Root
-    mainClass.set("ACM")
+    mainClass.set("com.acm.main.ACM")
 }
 
 repositories { mavenCentral() }

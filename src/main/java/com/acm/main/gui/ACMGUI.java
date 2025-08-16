@@ -19,7 +19,6 @@ import java.awt.PopupMenu;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -38,7 +37,6 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -92,14 +90,36 @@ import com.acm.main.util.FilteredStreams;
 import com.acm.main.util.Network;
 import com.acm.main.util.Pruner;
 import com.acm.main.util.Updater;
-import com.sun.awt.AWTUtilities;
+import java.util.Objects;
 
 public class ACMGUI {
+
+	private static final ImageIcon APP_ICON_SMALL = new ImageIcon(
+		Objects.requireNonNull(
+			ACMGUI.class.getResource("/acm_small.gif"),
+			"Missing resource: /acm_small.gif"
+		)
+	);
+
+	private static final ImageIcon APP_ICON = new ImageIcon(
+		Objects.requireNonNull(
+			ACMGUI.class.getResource("/acm.gif"),
+			"Missing resource: /acm.gif"
+		)
+	);
+
+	private static final ImageIcon FOLDER_IMAGE = new ImageIcon(
+		Objects.requireNonNull(
+			ACMGUI.class.getResource("/folderImage.gif"),
+			"Missing resource: /folderImage.gif"
+		)
+	);
+
 
 	/* Constants. */
 	private static final long ALWAYS_ON_TOP_TIMER = 60000L;
 	private static final int DESIRED_HEIGHT = 15;
-	private static final ImageIcon icon_small = new ImageIcon(ACM.class.getResource("res/acm_small.gif"));
+	private static final ImageIcon icon_small = APP_ICON_SMALL;
 	private static final String unicodeFont = "Arial Unicode MS";
 	private static final Font smallFont = new Font("Arial", Font.BOLD, 10);
 	private static final Font outputWindowFont = new Font(unicodeFont, Font.PLAIN, 11);
@@ -107,7 +127,7 @@ public class ACMGUI {
 	private static MouseMotionListener mml;
 
 	public static final int TA_WIDTH = 100;
-	public static final ImageIcon icon = new ImageIcon(ACM.class.getResource("res/acm.gif"));
+	public static final ImageIcon icon = APP_ICON;
 	public static final int MESSAGE_TYPE_UPDATED = 1;
 	public static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -117,7 +137,7 @@ public class ACMGUI {
 
 	public static int WIDTH = 340;
 	public static int HEIGHT = 0;
-	public static ImageIcon folderIcon = new ImageIcon(ACM.class.getResource("res/folderImage.gif"));
+	public static ImageIcon folderIcon = FOLDER_IMAGE;
 	public static Font font = new Font("Verdana", Font.PLAIN, 10);
 	public static Point location;
 	public static MouseEvent pressed;
@@ -214,6 +234,7 @@ public class ACMGUI {
 	}
 
 	private static void setupSnowEffect() {
+		// TODO transform these like the app and folder iconsâ€¦
 		final ImageIcon snow2 = new ImageIcon(ACM.class.getResource("res/snow/snow2.png"));
 		final ImageIcon snow3 = new ImageIcon(ACM.class.getResource("res/snow/snow3.png"));
 		final ImageIcon snow4 = new ImageIcon(ACM.class.getResource("res/snow/snow4.png"));
@@ -304,17 +325,9 @@ public class ACMGUI {
 
 	public static void setTranslucency(float opacity) {
 		try {
-			if (translucencySupportedOnSystem) {
-				if (AWTUtilities.isTranslucencySupported(AWTUtilities.Translucency.TRANSLUCENT)) {
-					Class<?> awtUtilitiesClass = Class.forName("com.sun.awt.AWTUtilities");
-					Method mSetWindowOpacity = awtUtilitiesClass.getMethod("setWindowOpacity", Window.class, float.class);
-					mSetWindowOpacity.invoke(null, mainDialog, Float.valueOf(opacity));
-					mSetWindowOpacity.invoke(null, outputDialog, Float.valueOf(opacity));
-				} else {
-					translucencySupportedOnSystem = false;
-					slider.setEnabled(false);
-				}
-			}
+			// Neu (Java 7+): ohne AWTUtilities
+			ACMGUI.mainDialog.setBackground(new java.awt.Color(0,0,0,0));
+			ACMGUI.mainDialog.setOpacity(opacity);
 		} catch (Exception e) {
 			translucencySupportedOnSystem = false;
 			slider.setEnabled(false);
@@ -1700,7 +1713,7 @@ public class ACMGUI {
 			}
 		});
 
-		JButton minimize = new JButton("– ");
+		JButton minimize = new JButton("ï¿½ ");
 		minimize.setBorder(null);
 		minimize.setForeground(Color.WHITE);
 		minimize.setBackground(Color.BLACK);
